@@ -1,0 +1,298 @@
+.review-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: #fff;
+  border-bottom: 1px solid #d8e7f3;
+}
+.review-header-inner {
+  max-width: 1440px;
+  min-height: 88px;
+  margin: auto;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.review-brand {
+  display: flex;
+  flex-shrink: 0;
+}
+.review-brand img {
+  width: 180px;
+  height: auto;
+  display: block;
+}
+.review-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex: 1;
+}
+.review-nav > a,
+.nav-group > summary {
+  font-size: 14px;
+  font-weight: 650;
+  color: #203d60;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.review-nav > a:hover,
+.nav-group > summary:hover {
+  color: #0048b3;
+}
+.review-header .nav-group {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.review-header .nav-group > summary {
+  padding: 12px 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+.review-header .nav-group > summary::-webkit-details-marker {
+  display: none;
+}
+.review-header .nav-group > summary::after {
+  content: '⌄';
+  position: static;
+  font-size: 15px;
+  line-height: 1;
+}
+.review-header .nav-group[open] > summary::after {
+  content: '⌃';
+}
+.nav-panel {
+  position: absolute;
+  left: -16px;
+  top: 100%;
+  min-width: 220px;
+  padding: 8px;
+  background: white;
+  border: 1px solid #d8e7f3;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px #003b881a;
+}
+.nav-panel a {
+  display: block;
+  padding: 12px;
+  border-radius: 7px;
+  color: #203d60;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.nav-panel a:hover {
+  background: #f2fafe;
+}
+.review-header .btn-primary {
+  color: white;
+  white-space: nowrap;
+  font-size: 14px;
+  flex-shrink: 0;
+  min-height: 46px;
+  padding: 12px 20px;
+}
+.review-toggle {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #d8e7f3;
+  border-radius: 9px;
+  padding: 10px 14px;
+  color: #003b88;
+  background: white;
+  cursor: pointer;
+  font-weight: 650;
+}
+.review-mobile[hidden] {
+  display: none;
+}
+.review-mobile {
+  padding: 12px 24px 24px;
+  border-top: 1px solid #d8e7f3;
+  max-height: calc(100dvh - 88px);
+  overflow: auto;
+}
+.review-mobile > a {
+  display: block;
+  padding: 12px 0;
+  text-decoration: none;
+  font-weight: 650;
+}
+.review-mobile .nav-panel {
+  position: static;
+  box-shadow: none;
+  border: 0;
+  border-left: 2px solid #d8e7f3;
+  border-radius: 0;
+  margin: 0 0 8px 6px;
+  padding: 0 8px;
+}
+.review-mobile .btn-primary {
+  display: flex;
+  padding: 12px 20px;
+  margin-top: 12px;
+}
+.review-context-link {
+  color: #003b88;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (max-width: 1200px) {
+  .review-nav {
+    display: none;
+  }
+  .review-brand {
+    margin-right: auto;
+  }
+  .review-toggle {
+    display: inline-flex;
+  }
+}
+@media (min-width: 1201px) {
+  .review-mobile {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .review-header-inner {
+    min-height: 76px;
+    padding: 14px 18px;
+    gap: 16px;
+  }
+  .review-brand img {
+    width: 155px;
+  }
+  .review-cta {
+    display: none;
+  }
+  .review-toggle {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+/* Deliberate disclosure styling, isolated from the page's FAQ details rules. */
+.review-header .nav-group > summary {
+  padding: 10px 12px;
+  border-radius: 8px;
+  gap: 8px;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+.review-header .nav-group > summary::after {
+  display: none;
+}
+.review-header .nav-group[open] > summary,
+.review-header .nav-group > summary:hover {
+  background: #f0f5fb;
+  color: #003b88;
+}
+.review-header .nav-chevron {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.15s;
+}
+.review-header .nav-group[open] .nav-chevron {
+  transform: rotate(180deg);
+}
+.review-nav {
+  gap: 14px;
+}
+.review-header .nav-panel {
+  left: 0;
+  top: calc(100% + 12px);
+  width: 316px;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid #e1e8f0;
+  border-radius: 14px;
+  box-shadow:
+    0 16px 40px -12px #13274333,
+    0 3px 10px #13274308;
+}
+.review-header .nav-panel a {
+  padding: 16px;
+  border-radius: 9px;
+  white-space: normal;
+  line-height: 1.45;
+}
+.review-header .nav-panel a + a {
+  margin-top: 2px;
+}
+.review-header .nav-panel a:hover,
+.review-header .nav-panel a:focus-visible {
+  background: #eef5fd;
+  color: #003b88;
+}
+.nav-item-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.nav-item-title > span {
+  color: #7589a1;
+  font-size: 17px;
+  font-weight: 400;
+}
+.nav-item-description {
+  display: block;
+  margin-top: 5px;
+  color: #62738a;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.review-mobile .nav-group > summary {
+  padding: 12px 0;
+  justify-content: space-between;
+  border-radius: 0;
+}
+.review-mobile .nav-group[open] > summary,
+.review-mobile .nav-group > summary:hover {
+  background: transparent;
+}
+.review-mobile .nav-panel {
+  position: static;
+  width: 100%;
+  margin: 0 0 12px;
+  padding: 4px;
+  border: 1px solid #e1e8f0;
+  border-radius: 10px;
+  background: #f7f9fc;
+  box-shadow: none;
+}
+.review-mobile .nav-panel a {
+  padding: 12px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .review-header .nav-chevron,
+  .review-header .nav-group > summary {
+    transition: none;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
